@@ -5,7 +5,6 @@ This API service serves info about potentially hazardous asteroids that come clo
 The data is collected from NASA's Near Earth Object Web Service.
 
 [![codecov](https://codecov.io/gh/psyb0t/potentially-hazardous-asteroids/branch/main/graph/badge.svg?token=4LANEUHEQX)](https://codecov.io/gh/psyb0t/potentially-hazardous-asteroids)
-
 ![build](https://github.com/psyb0t/potentially-hazardous-asteroids/workflows/build/badge.svg)
 
 ## Supported Environment Variables

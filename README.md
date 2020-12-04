@@ -6,6 +6,7 @@ The data is collected from NASA's Near Earth Object Web Service.
 
 [![codecov](https://codecov.io/gh/psyb0t/potentially-hazardous-asteroids/branch/master/graph/badge.svg?token=4LANEUHEQX)](https://codecov.io/gh/psyb0t/potentially-hazardous-asteroids)
 ![build](https://github.com/psyb0t/potentially-hazardous-asteroids/workflows/build/badge.svg)
+[![goreportcard](https://goreportcard.com/badge/github.com/psyb0t/potentially-hazardous-asteroids)](https://goreportcard.com/report/github.com/psyb0t/potentially-hazardous-asteroids)
 
 ## Supported Environment Variables
 

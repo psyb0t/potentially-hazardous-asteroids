@@ -1,0 +1,3 @@
+debug: true
+listen_address: "127.0.0.1:8080"
+nasa_api_key: "yourkey"

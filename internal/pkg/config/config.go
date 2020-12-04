@@ -29,3 +29,12 @@ func (c *Config) LoadFromFile(filePath string) error {
 
 	return yaml.Unmarshal(rawConfig, c)
 }
+
+// Validate checks if the required fields are set
+func (c Config) Validate() error {
+	if c.NASAAPIKey == "" {
+		return ErrNASAAPIKeyNotSet
+	}
+
+	return nil
+}

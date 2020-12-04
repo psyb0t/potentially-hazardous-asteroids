@@ -11,14 +11,14 @@ lint: ## Lint Golang files
 	@golint -set_exit_status $(PKG_LIST)
 
 build: dep ## Build the executable binary
-	@go build -o build/potentially-hazardous-asteroids cmd/*.go
+	@go build -o build/potentially-hazardous-asteroids cmd/main.go
 
 build-dockerimage: build ## Build the executable binary and rebuild docker image then remove build dir
 	@docker build . --tag psyb0t/potentially-hazardous-asteroids
 	@rm -rf build
 
 run: dep ## Run without building
-	@go run cmd/*.go
+	@go run cmd/main.go
 
 clean: ## Remove the build directory
 	@rm -rf build

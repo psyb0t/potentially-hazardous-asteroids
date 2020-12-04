@@ -65,9 +65,11 @@ func getConfig() (*phaconfig.Config, error) {
 	// If not set, fail
 	if config.NASAAPIKey == "" {
 		config.NASAAPIKey = os.Getenv("PHA_NASA_API_KEY")
-		if config.NASAAPIKey == "" {
-			return nil, ErrNASAAPIKeyNotSet
-		}
+	}
+
+	err := config.Validate()
+	if err != nil {
+		return nil, err
 	}
 
 	// If the PHA_DEBUG env var is set, config.Debug becomes true, whatever

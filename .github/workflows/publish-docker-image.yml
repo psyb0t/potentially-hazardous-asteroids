@@ -7,16 +7,25 @@ jobs:
   push_to_registry:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
-    needs: [build]
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
       - name: Build
         run: make build
-      - name: Push to Docker Hub
-        uses: docker/build-push-action@v1
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          repository: psyb0t/potentially-hazardous-asteroids
-          tag_with_ref: true
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: psyb0t/potentially-hazardous-asteroids

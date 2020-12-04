@@ -6,6 +6,8 @@ The data is collected from NASA's Near Earth Object Web Service.
 
 [![codecov](https://codecov.io/gh/psyb0t/potentially-hazardous-asteroids/branch/main/graph/badge.svg?token=4LANEUHEQX)](https://codecov.io/gh/psyb0t/potentially-hazardous-asteroids)
 
+![build](https://github.com/psyb0t/potentially-hazardous-asteroids/workflows/build/badge.svg)
+
 ## Supported Environment Variables
 
 PHA_CONFIG_FPATH - configuration file path. if set, the config struct will have its fields loaded from the given yaml file

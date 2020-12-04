@@ -4,20 +4,6 @@ on:
     tags:
       - "*"
 jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up Go
-        uses: actions/setup-go@v1
-        with:
-          go-version: 1.15
-
-      - name: Check out code
-        uses: actions/checkout@v1
-
-      - name: Build
-        run: make build
   push_to_registry:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
@@ -25,6 +11,8 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
+      - name: Build
+        run: make build
       - name: Push to Docker Hub
         uses: docker/build-push-action@v1
         with:
